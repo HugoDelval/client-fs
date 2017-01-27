@@ -1,0 +1,33 @@
+name:                client-fs
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.md
+homepage:            https://github.com/HugoDelval/client-fs#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Hugo DELVAL
+maintainer:          hugodelval@gmail.com
+copyright:           Copyleft
+category:            distributed file system - REST API
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     FileManager
+  build-depends:       base >= 4.7
+                     , directory >= 1.2.7.0
+  default-language:    Haskell2010
+
+executable client-fs-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , client-fs
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/HugoDelval/client-fs
