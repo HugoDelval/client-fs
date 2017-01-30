@@ -74,6 +74,10 @@ That's it congratulations!! You now have a fully functional distributed filesyst
 
 # Why LizardFS ?
 
+## Overview
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "LizardFS overview")
+
 ## Modularity
 
 Each server can have one or more role (metadata, chunkserver, master and so on..). So it is easy to add a server if this functionnality takes to long (for example if there is a lack of space we can just pop another chunkserver really easily).
