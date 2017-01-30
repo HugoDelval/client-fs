@@ -12,22 +12,23 @@ The docker configuration files as well as the Lizardfs configuration files were 
 
 ## Server side
 
+In this tutorial we will then refer to ```$MASTER_IP``` as the IP address of the master node and ```$RANGE_ESCAPED``` as the trusted IP server range. **Please replace these variables with the actual IPs.**
+
+```bash
+$MASTER_IP = "172.17.0.2" # for example
+$RANGE_ESCAPED = "172.17.0.0\\/24" # for example
+```
+
 First you need to launch a master:
 
 ```bash
-docker run -i hugodelval/lizardfs-master bash -c "service lizardfs-master restart && bash"
-```
-
-In this tutorial we will then refer to ```$MASTER_IP``` as the IP address of the master node. **Please replace this variable with the actual IP of the Docker node.**
-
-```bash
-$MASTER_IP = 172.17.0.2 # for example
+docker run -i hugodelval/lizardfs-master /run.sh $RANGE_ESCAPED
 ```
 
 To make sure the service is always up we can launch a master-shadow node, which is ready at any moment to take the role of the master node (by syncing each actions and so on..) :
 
 ```bash
-docker run -i --add-host=mfsmaster:$MASTER_IP hugodelval/lizardfs-shadow bash -c "service lizardfs-master restart && bash"
+docker run -i --add-host=mfsmaster:$MASTER_IP hugodelval/lizardfs-shadow /run.sh $RANGE_ESCAPED
 ```
 
 Then we need one or several metalogger node(s) which store the metadata for each file/directory (location, size..) in a distributed fashion (information duplicated).
@@ -65,7 +66,7 @@ lsmod  | grep fuse
 We are ready to launch the actual client !
 
 ```bash
-docker run -i --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined --add-host=mfsmaster:$MASTER_IP hugodelval/lizardfs-client-stack /app/run.sh
+docker run -i --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined --add-host=mfsmaster:$MASTER_IP hugodelval/lizardfs-client-stack /app/scripts/run.sh
 ```
 
 Note that we need to add a Linux capacity to Docker (SYS_ADMIN) as well as the *FUSE* device and some security options to allow Docker to use *FUSE* and *LizardFS*

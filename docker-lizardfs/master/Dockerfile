@@ -27,6 +27,10 @@ RUN cp /etc/mfs/mfsexports.cfg.dist /etc/mfs/mfsexports.cfg
 RUN cp /etc/mfs/mfsgoals.cfg.dist /etc/mfs/mfsgoals.cfg
 RUN cp /etc/mfs/mfstopology.cfg.dist /etc/mfs/mfstopology.cfg
 
+ADD run.sh /
+
+RUN echo "172.17.0.0/24 / rw,alldirs,maproot=0" >> /etc/mfs/mfsexports.cfg
+
 RUN sed -i 's/LIZARDFSMASTER_ENABLE=false/LIZARDFSMASTER_ENABLE=true/g' /etc/default/lizardfs-master
 CMD service lizardfs-master start
 
