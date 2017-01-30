@@ -1,6 +1,6 @@
 # Distributed filesystem
 
-This project is a distributed filesytem based on *LizardFS* [http://docs.lizardfs.com](docs.lizardfs.com) wrapped into docker instances.
+This project is a distributed filesystem based on *LizardFS* [http://docs.lizardfs.com](docs.lizardfs.com) wrapped into docker instances.
 
 The client for this filesystem is also a *LizardFS* Docker instance but includes Haskell code to interact with the filesystem. 
 
