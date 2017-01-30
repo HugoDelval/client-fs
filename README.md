@@ -84,15 +84,15 @@ Another advantage of the modularity of *LizardFS* is the cost of the servers, ea
 
 Tests have been done on *LizardFS* by huge companies [https://www.reddit.com/r/DataHoarder/comments/3igkm2/can_you_please_share_your_experience_with_lizardfs/](www.reddit.com/r/DataHoarder/comments/3igkm2/can_you_please_share_your_experience_with_lizardfs/). They tested it for many days with 10 parallel FIO processes running 24 hours each, every FIO made up of a variable number (10 to 100) threads, on many nodes in parallel. And causing hard resets randomly while doing it. **Very few file systems work well doing that**. *LizardFS* was able to work flawlessly even in very hard conditions.
 
-## very good posix FS layer
+## Very good posix FS layer
 
 *LizardFS* exposes only a traditional file system (through FUSE), not an object store and through a layer the CephFS posix layer.
 
-## snapshots
+## Snapshots
 
 Snapshots are istantaneous, redirect-on-write (like NetApp's WAFL) so only changes are written to disk. 
 
-## goals
+## Goals
 The LizardFS concept of goal is extremely powerful. You can ask for chunks to be placed on a specific kind of disk (for example, one copy on SSD and one on rotational), geographical (one copy here and one in the remote datacenter) and you can set the number of replicas file by file. Goal can be set per file, and changed at any time.
 
 ## Usability
