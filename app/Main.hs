@@ -12,7 +12,14 @@ randomIOs = do
     FM.rm "/helo"
     FM.mkdir "/helo/hugo" True
     FM.write "/helo/hugo/plop" "Hi there!\n"
+    key <- FM.lock "/helo/hugo/plop"
+    FM.readLocked "/helo/hugo/plop" key
+
+    -- both operation should fail
     FM.read "/helo/hugo/plop"
+    FM.readLocked "/helo/hugo/plop" "Not the right key"
+    
+    FM.unlock "/helo/hugo/plop" key
 
     FM.mv "/helo/hugo/plop" "/helo/hugo/plop2"
 

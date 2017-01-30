@@ -136,9 +136,9 @@ From this benchmark we can see that both *GlusterFS* and *LizardFS* are both gre
 
 	This is done via the metadatas server and the master server.
 
-- [ ] Lock Service 
+- [x] Lock Service 
 
-	TODO
+	Locking a file is done by taking advantage of the filesystem itself to avoid slowing down the system by requesting a REST API. The locking system is based on lockfiles.
 
 - [ ] Transactions
 
