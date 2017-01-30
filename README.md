@@ -76,7 +76,7 @@ That's it congratulations!! You now have a fully functional distributed filesyst
 
 ## Overview
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "LizardFS overview")
+![alt text](https://raw.githubusercontent.com/HugoDelval/client-fs/master/res/lfs.png "LizardFS overview")
 
 ## Modularity
 
