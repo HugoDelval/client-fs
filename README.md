@@ -117,24 +117,31 @@ From this benchmark we can see that both *GlusterFS* and *LizardFS* are both gre
 # Functionalities
 
 * Distributed Transparent File Access
+
 	As said previously, *LizardFS* is efficient and extremely robust, with error recovery and so on.
 
 * Replication
+
 	Go with the robustest of *LizardFS*, you can easily specify how many copies you want of which files.
 
 * Caching
+
 	Caching is also supported by *LizardFS*
 
 * Directory Service 
+
 	This is done via the metadatas server and the master server.
 
 * Lock Service 
+
 	TODO
 
 * Transactions
+
 	TODO
 
 * Security
+
 	TODO
 
 
