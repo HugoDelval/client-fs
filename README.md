@@ -122,7 +122,7 @@ From this benchmark we can see that both *GlusterFS* and *LizardFS* are both gre
 
 - [x] Replication
 
-	Go with the robustest of *LizardFS*, you can easily specify how many copies you want of which files.
+	Go with the robustest of *LizardFS*, you can easily specify (cf configuration files & Docker) how many copies you want of which files.
 
 - [x] Caching
 
