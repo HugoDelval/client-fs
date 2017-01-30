@@ -6,6 +6,10 @@ The client for this filesystem is also a *LizardFS* Docker instance but includes
 
 # Quickstart
 
+## Docker and Lizardfs
+
+The docker configuration files as well as the Lizardfs configuration files were the biggest part of this project, you can find all these scripts in the **docker-lizardfs/** forlder.
+
 ## Server side
 
 First you need to launch a master:
